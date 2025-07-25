@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Calendar App Vanilla JS</title>
+  </head>
+  <body>
+    
+    <div id="container">
+      <div class="headerH">
+        <div id="header">
+          <div id="monthDisplay">
+          </div>
+          <div>
+            <button id="backButton"><i class="fas fa-angle-left prev" id="left"></i></button>
+            <button id="nextButton"><i class="fas fa-angle-right next" id="right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+
+      <div id="calendar"></div>
+
+          <div class="slider-container">
+      
+         
+      
+        <div
+          class="slide"
+          style="
+            background-image: url('https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_1280.jpg');
+          "
+        ></div>
+         
+      
+        <div
+          class="slide"
+          style="
+            background-image: url('https://www.farmersalmanac.com/wp-content/uploads/2022/07/Snow-scene-blue.jpg');
+          "
+        ></div>
+  
+        
+        <div
+          class="slide"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1528231843764-7ab0490b6676?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=814&q=80');
+          "
+         ></div>
+
+        
+        <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2017/02/19/15/28/winter-2080070_1280.jpg');
+        "
+      ></div>
+
+      
+      <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2022/05/03/23/35/rapeseed-7172836_1280.jpg');
+        "
+      ></div>
+
+     
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/5-tuscany-spring-rolling-hills-on-sunset-rural-landscape-green-stevanzz-photography.jpg');
+        "
+      ></div>
+
+      
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1593013174963-be2185e98a6c?q=80&w=1785&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        "
+      ></div>
+
+      
+      <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2014/08/15/11/29/beach-418742_1280.jpg');
+        "
+      ></div>
+
+      
+      <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2020/02/27/14/44/smoky-mountains-4884875_1280.jpg');
+        "
+      ></div>
+
+      
+      <div
+        class="slide"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2017/06/17/18/35/beach-2413081_1280.jpg');
+        "
+      ></div>
+        
+        <div
+          class="slide"
+          style="
+            background-image: url('https://images.pexels.com/photos/130879/pexels-photo-130879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+          "
+        ></div>
+         
+         <div
+         class="slide active"
+         style="
+           background-image: url('https://images.pexels.com/photos/158028/bellingrath-gardens-alabama-landscape-scenic-158028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+         "
+       ></div> 
+        
+    </div> 
+    </div> 
+
+    <div id="newEventModal">
+      <h2>New Event</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

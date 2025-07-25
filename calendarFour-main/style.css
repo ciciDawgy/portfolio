@@ -1,0 +1,166 @@
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+  transition: 0.4s fade-in;
+}
+
+.headerH {
+  position: relative;
+}
+
+#monthDisplay {
+  margin-left: 120px;
+  padding: 10px;
+}
+
+#header {
+  background-color: #58bae4;
+  height: 80px;
+  padding: 10px;
+  color: #fff;
+  font-size: 26px;
+  font-family: sans-serif;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+}
+
+#header button {
+ border: none;
+ background-color: transparent;
+ color: #fff;
+ font-size: 25px;
+ text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.8);
+} 
+
+
+#left {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+}
+
+#right {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+}
+
+#container {
+  width: 450px;
+  margin-top: 50px;
+}
+#weekdays {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.8);
+}
+#weekdays div {
+  width: 80px;
+  padding: 5px;
+  margin: 0px 10px;
+  color: #fff;
+}
+#calendar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.9);
+}
+.day {
+  width: 50px;
+  padding: 8px;
+  height: 50px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 10px 7px;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.day:hover {
+  background-color: #3d3d3d;
+}
+
+.day + #currentDay {
+  background-color:#e8f4fa;
+}
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+
+#newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid rgb(0, 187, 255);
+}
+#cancelButton, #deleteButton {
+  background-color: #6c6cd3;
+}
+#saveButton, #closeButton {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
