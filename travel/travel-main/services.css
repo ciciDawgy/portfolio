@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+
+.nav {
+    display: flex;
+    background-color: #000;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav li a {
+    color: #fff;
+    text-decoration: none;
+    margin: 25px;
+    font-size: 20px;
+    transform: translateX(5%);
+}
+
+.nav li:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  margin-left: 500px;
+}
+
+.logo {
+  font-weight: 900;
+}
+
+
+  
+.hero {
+  width: 80%;
+  height: 450px;
+  margin: 100px auto;
+}
+
+.btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-box button {
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 14px 60px;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-weight: bold; 
+    color: #333;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% auto;
+    position: absolute;
+    transform: translateX(200%);
+    transition: 0.8s;
+}
+
+.content h1 {
+    padding: 20px;
+}
+
+.content-left {
+    margin: 10px 80px;
+    flex-basis: 50%;
+}
+
+.content-right {
+    flex-basis: 50%;
+}
+
+.content-right img {
+    width: 350px;
+}
+
+#content1 {
+    transform: translateX(0px);
+}
+
+.btn:hover {
+    color: blue;
+}

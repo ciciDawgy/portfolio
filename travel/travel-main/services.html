@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="services.css">
+    <title>Services</title>
+</head>
+<body>
+
+  <ul class="nav">
+    <li><a href="index.html" class="logo">CruiSeZ</a></li>
+    <div class="navbar">
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </div>
+  </ul>
+
+     <div class="hero">
+        <div class="btn-box">
+            <button id="btn1" class="btn" onclick="carribean()">Carribean</button>
+            <button id="btn2" class="btn" onclick="alaska()">Alaska</button>
+            <button id="btn3" class="btn" onclick="hawaii()">Hawaii</button>
+            <button id="btn4" class="btn" onclick="disney()">Disney</button>
+        </div>
+        <div id="content1" class="content">
+            <div class="content-left">
+                <h1>Caribbean Cruise</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente deserunt quidem nisi, magni libero illum cupiditate enim quis, tenetur consequatur amet exercitationem? Quas quod, repudiandae numquam nulla molestiae dolorum dolor exercitationem iure optio dolores modi voluptas error ex nihil aliquam? Voluptatibus qui nihil neque eveniet fuga blanditiis quidem suscipit ipsam.</p>
+            </div>
+            <div class="content-right">
+                <img src="https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80">
+            </div>
+        </div>
+        <div id="content2" class="content">
+            <div class="content-left">
+                <h1>Alaska Cruise</h1>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur tenetur non vel eos porro accusamus? Assumenda non voluptates soluta, dolor animi quisquam quidem omnis quibusdam vitae enim provident eius odit itaque id impedit, sit repellendus voluptate, necessitatibus dolores debitis nobis? Dolores reprehenderit, in quas saepe tempore non corrupti sit?</P>
+            </div>
+            <div class="content-right">
+                <img src="https://www.civitatis.com/blog/wp-content/uploads/2021/06/ballena-alaska-portada.jpg">
+            </div>
+        </div>
+        <div id="content3" class="content">
+            <div class="content-left">
+                <h1>Hawaii Cruise</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, cumque debitis maiores sunt aperiam ratione. Rerum voluptatem eos distinctio voluptas optio ipsum, voluptatum quas mollitia quo nihil, nemo eum consectetur! Ullam, inventore maxime ab numquam eius animi nam deleniti quidem vitae, accusantium aliquid distinctio nobis non magnam porro perspiciatis recusandae.</p>
+            </div>
+            <div class="content-right">
+                <img src="https://www.travelandleisure.com/thmb/Sj3hlctFBfPhdrEDmfkuF_OEPvI=/900x0/filters:no_upscale():max_bytes(150000):strip_icc():gifv():format(webp)/delta-hawaii-DELTAHAWAII0222-6150fd101853411d8b77163c64b48eb0.jpg">
+            </div>
+        </div>
+        <div id="content4" class="content">
+            <div class="content-left">
+                <h1>Disney Cruise</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores velit officia deserunt voluptates pariatur ut fugiat sit obcaecati quis cumque repellendus ex unde perferendis, possimus natus, nemo totam iste, atque modi placeat architecto non illo. Facilis, voluptate sunt laborum veniam odit, nemo, quam perspiciatis nostrum neque architecto temporibus exercitationem reprehenderit.</p>
+            </div>
+            <div class="content-right">
+                <img src="https://www.dreamsunlimitedtravel.com/disney-cruise-line/images/castaway-cay-family.jpg">
+            </div>
+        </div>
+      </div>
+    
+      <script>
+    
+        var content1 = document.getElementById('content1');
+        var content2 = document.getElementById('content2');
+        var content3 = document.getElementById('content3');
+        var content4 = document.getElementById('content4');
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+        const btn4 = document.getElementById('btn4');
+        
+        function carribean() {
+            content1.style.transform = "translateX(0)";
+            content2.style.transform = "translateX(200%)";
+            content3.style.transform = "translateX(200%)";
+            content4.style.transform = "translateX(200%)";
+            content1.style.transitionDelay = "0.3s";
+            content2.style.transitionDelay = "0s";
+            content3.style.transitionDelay = "0s";
+        }
+    
+        function alaska() {
+            content1.style.transform = "translateX(200%)";
+            content2.style.transform = "translateX(0)";
+            content3.style.transform = "translateX(200%)";
+            content4.style.transform = "translateX(200%)";
+            content1.style.transitionDelay = "0s";
+            content2.style.transitionDelay = "0.3s";
+            content3.style.transitionDelay = "0s";
+        }
+    
+        function hawaii() {
+            content1.style.transform = "translateX(200%)";
+            content2.style.transform = "translateX(200%)";
+            content3.style.transform = "translateX(0)";
+            content4.style.transform = "translateX(200%)";
+            content1.style.transitionDelay = "0s";
+            content2.style.transitionDelay = "0s";
+            content3.style.transitionDelay = "0.3s";
+        }
+    
+        function disney() {
+            content1.style.transform = "translateX(200%)";
+            content2.style.transform = "translateX(200%)";
+            content3.style.transform = "translateX(200%)";
+            content4.style.transform = "translateX(0)";
+            content1.style.transitionDelay = "0s";
+            content2.style.transitionDelay = "0s";
+            content3.style.transitionDelay = "0.3s";
+            content4.style.transitionDelay = "0.5s";
+        }
+    
+    
+      </script>
+    
+    </body>
+    </html>
+</body>
+</html>
