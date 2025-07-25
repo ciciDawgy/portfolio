@@ -1,0 +1,406 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: url('https://images.unsplash.com/photo-1528818955841-a7f1425131b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80');
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.starWars {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 5vw;
+  line-height: 1.3;
+  overflow: hidden;
+}
+
+  .starWars .container {
+    margin: 0 auto;
+    perspective: 380px;
+    perspective-origin: bottom;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: visible;
+    transform: scaleY(0.9);
+}
+
+.credits {
+    position: absolute;
+    top: 0;
+    left: 13%;
+    right: 13%;
+    height: 100%;
+    animation: play 20s forwards;
+}
+
+.rocket {
+    width: 350px;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: -600px;
+    left: 36%;
+    animation: fly 10s 15s ease-in;
+}
+
+@keyframes fly {
+    0% { bottom: -600px;} 
+    100% {bottom: 100%;} 
+}
+
+
+
+@keyframes play {
+    0% {
+        transform: rotateX(21deg) translate3d(0, 100rem, 0);
+    }
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateX(21deg) translate3d(0, -150rem, 0);
+        opacity: 0;
+    }
+   
+}
+
+
+.orbitContainer {
+    transform: rotateX(-120deg);
+    margin: 300px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 10%;
+    z-index: 500;
+    animation: fadeIn 10s linear 25s forwards;
+    opacity: 0;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+.planet {
+    cursor: pointer;
+    border: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.orbit {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    padding: 40px;
+}
+
+.orbit1 {
+    animation: rotate-2 30s infinite linear;
+    padding: 140px;
+}
+
+.orbit2 {
+    animation: rotate-2 34s infinite linear;
+    padding: 200px;
+}
+
+.orbit3 {
+    animation: rotate-2 38s infinite linear;
+    padding: 260px;
+}
+
+.orbit4 {
+    animation: rotate-2 42s infinite linear;
+    padding: 320px;
+}
+
+.orbit5 {
+    animation: rotate-2 44s infinite linear;
+    padding: 385px;
+}
+
+
+.orbit6 {
+    animation: rotate-2 48s infinite linear;
+    padding: 450px;
+}
+
+.orbit7 {
+    animation: rotate-2 50s infinite linear;
+    padding: 510px;
+}
+
+.orbit8 {
+    animation: rotate-2 54s infinite linear;
+    padding: 565px;
+}
+
+.orbit9 {
+    animation: rotate-2 58s infinite linear;
+    padding: 290px;
+}
+
+@keyframes rotate-2 {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+.sun {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: url('https://pngimg.com/uploads/sun/sun_PNG13424.png');
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+
+.mercury {
+    width: 25px;
+    height: 25px;
+    background-image: url('https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/AW_Mercury_ladprw.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    z-index: 5;
+}
+
+.venus {
+    width: 35px;
+    height: 35px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/dc/Venus.png?20221209041007');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    outline: 0;
+}
+
+.earth {
+    width: 40px;
+    height: 40px;
+    background-image: url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/School-Clipart/Earth_PNG_Clipart.png?m=1591089747');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, -50%);
+}
+
+.mars {
+    width: 33px;
+    height: 33px;
+    background-image: url('https://pngimg.com/uploads/mars_planet/mars_planet_PNG28.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, -50%);
+    outline: 0;
+}
+
+.jupitor {
+    width: 70px;
+    height: 70px;
+    background-image: url('https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/DK_192970_jupiter_aw_wbzzsf.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, -50%);
+}
+
+.saturn {
+    width: 60px;
+    height: 60px;
+    background-image: url('https://www.pngarts.com/files/4/Saturn-PNG-High-Quality-Image.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, -50%);
+}
+
+.uranus {
+    width: 45px;
+    height: 45px;
+    background-image: url('https://nineplanets.org/wp-content/uploads/2019/09/uranus.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, -50%);
+}
+
+.neptune {
+    width: 47px;
+    height: 47px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/20/Neptune_cutout.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, -50%);
+}
+
+.planet p {
+    color: #fff;
+    font-weight: bolder;
+    font-size: xx-large;
+    transform: scale(-1, 1);
+    display: none;
+}
+
+
+/*Shooting stars*/
+
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 0 0 8px rgba(255,255,255, 0.1),
+    0 0 20px rgba(255, 255, 255, 1);
+    animation: animate 3s linear infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff,
+    transparent);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+span:nth-child(1){
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 0;
+    animation-duration: 1s;
+}
+
+span:nth-child(2){
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+
+span:nth-child(3){
+    top: 80px;
+    right: 0px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+
+span:nth-child(4){
+    top: 0;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+}
+
+span:nth-child(5){
+    top: 0;
+    right: 400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+}
+
+span:nth-child(6){
+    top: 0;
+    right: 600px;
+    left: initial;
+    animation-delay: 0.3s;
+    animation-duration: 2.5s;
+}
+
+span:nth-child(7){
+    top: 0;
+    right: 800px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2.5s;
+}
+
+span:nth-child(8){
+    top: 0;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+}
+
+.modal {
+    width: 200px;
+    height: 200px;
+    padding: 200px 200px;
+    margin: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.fa-solid {
+    color: black;
+    z-index: 1000;
+}
+

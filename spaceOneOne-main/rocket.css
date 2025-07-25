@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #01070a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.scene .rocket {
+    position: absolute;
+    left: 270px;
+    bottom: 80px;
+    animation: animate 0.2s ease infinite;
+    width: 35%;
+}
+
+
+.nums {
+    color: #91E6E8;
+    font-size: 300px;
+}
+
+video {
+    position: absolute;
+    bottom: -200px;
+    left: 150px;
+    width: 100%;
+    color: transparent;
+    z-index: 1;
+}
+
+@keyframes animate {
+    0%, 100% {
+        tranform: translateY(-4px);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+}
