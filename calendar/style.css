@@ -41,11 +41,10 @@ html {
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-
 .month i {
   font-size: 2.5rem;
   cursor: pointer;
-} 
+}
 
 .month h1 {
   font-size: 3rem;
@@ -61,7 +60,7 @@ html {
 
 .weekdays {
   width: 100%;
-  height: 5rem;
+  height: 7rem;
   padding: 0 0.4rem;
   display: flex;
   align-items: center;
@@ -78,6 +77,9 @@ html {
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
+.modal {
+  display: none;
+}
 
 .days {
   width: 100%;
@@ -87,7 +89,7 @@ html {
 }
 
 .days div {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin: 0.3rem;
   width: calc(40.2rem / 7);
   height: 5rem;
@@ -107,7 +109,7 @@ html {
 
 .prev-date,
 .next-date {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .today {
@@ -116,8 +118,13 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   overflow: hidden;
+  margin: 0;
   background-position: center center;
   background-size: cover;
   transition: 0.4s;
@@ -130,7 +137,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.18);
+  background-color: rgba(0, 0, 0, 0.38);
   z-index: 2;
 }
 
@@ -153,40 +160,154 @@ body::before {
   z-index: 1;
 }
 
-
 .slide.active {
   opacity: 1;
 }
 
+
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+
+.modalContainer {
+  position: absolute;
+  top: 5%;
+  left: 30%;
+}
+
+.modalFive {
+  z-index: 1000;
+  height: 500px;
+  width: 550px;
+  background-color: #fff;
+  color: #262626;
+  font-size: 24px;
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  padding: 10px 20px;
+}
+
+.modalFive p {
+  margin-top: 100px;
+}
+
+.fa-solid {
+  position: absolute;
+  left: 500px;
+  transform: translateY(-25px);
+}
+
+#newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: #d36c6c;
+}
+#saveButton, #closeButton {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
 .padding {
   cursor: default !important;
   background-color: #FFFCFF !important;
   box-shadow: none !important;
 }
-
-@media(max-width: 768px) {
-  .calendar {
-    width: 48rem;
-    height: 52rem;
-    transform: translate(-120px, -10px);
-  }
+#newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
 }
-
-@media(max-width: 500px) {
-   .calendar {
-    width: 43rem;
-    height: 52rem;
-    transform: translate(-120px, -10px);
-   }
-
-   .days {
-    padding: 0rem;
-   }
-
-   .days div {
-      margin: 0.3rem;
-      width: calc(37rem / 7);
-      height: 5rem;
-   }
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: #d36c6c;
+}
+#saveButton, #closeButton {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
 }
 

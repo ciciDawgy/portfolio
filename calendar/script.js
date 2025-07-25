@@ -1,13 +1,23 @@
 const date = new Date();
+const monthDays = document.querySelector(".days");
+const container = document.querySelector('.container');
+const body = document.body;
+const slides = document.querySelectorAll('.slide')
+const leftBtn = document.getElementById('left')
+const rightBtn = document.getElementById('right')
+const calendar = document.querySelector('.calendar');
+const newEventModal = document.getElementById('newEventModal');
+const deleteEventModal = document.getElementById('deleteEventModal');
+const backDrop = document.getElementById('modalBackDrop');
+const eventTitleInput = document.getElementById('eventTitleInput');
+const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 
 
 const renderCalendar = () => {
   date.setDate(1);
 
-  const monthDays = document.querySelector(".days");
-
-
+  /*monthDays.addEventListener('click', openModal);*/
 
   const lastDay = new Date(
     date.getFullYear(),
@@ -86,13 +96,6 @@ document.querySelector(".next").addEventListener("click", () => {
 renderCalendar();
 
 
-const container = document.querySelector('.container');
-
-const body = document.body;
-const slides = document.querySelectorAll('.slide')
-const leftBtn = document.getElementById('left')
-const rightBtn = document.getElementById('right')
-
 let activeSlide = 0
 
 rightBtn.addEventListener('click', () => {
@@ -129,15 +132,39 @@ function setActiveSlide() {
   slides[activeSlide].classList.add('active')
 }
 
+/*function openModal(date) {
+  clicked = date;
 
+  const eventForDay = events.find(e => e.date === clicked);
 
-let nav = 0;
+  if (eventForDay) {
+    document.getElementById('eventText').innerText = eventForDay.title;
+    deleteEventModal.style.display = 'block';
+  } else {
+    newEventModal.style.display = 'block';
+  }
+
+  backDrop.style.display = 'block';
+}
+
+/*let nav = 0;
 let clicked = null;
+let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
+function openModal(date) {
+  clicked = date;
 
-const calendar = document.querySelector('.calendar');
-const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const eventForDay = events.find(e => e.date === clicked);
 
+  if (eventForDay) {
+    document.getElementById('eventText').innerText = eventForDay.title;
+    deleteEventModal.style.display = 'block';
+  } else {
+    newEventModal.style.display = 'block';
+  }
+
+  backDrop.style.display = 'block';
+}
 
 function load() {
   const dt = new Date();
@@ -166,7 +193,7 @@ function load() {
 
   calendar.innerHTML = '';
 
-  for(let i = 1; i <= paddingDays + daysInMonth; i++) {
+  /*for(let i = 1; i <= paddingDays + daysInMonth; i++) {
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
 
@@ -192,10 +219,41 @@ function load() {
       daySquare.classList.add('padding');
     }
 
-    calendar.appendChild(daySquare);    
+    calendar.appendChild(daySquare); 
+  }
+}*/
+
+/*function closeModal() {
+  eventTitleInput.classList.remove('error');
+  newEventModal.style.display = 'none';
+  deleteEventModal.style.display = 'none';
+  backDrop.style.display = 'none';
+  eventTitleInput.value = '';
+  clicked = null;
+  load();
+}
+
+function saveEvent() {
+  if (eventTitleInput.value) {
+    eventTitleInput.classList.remove('error');
+
+    events.push({
+      date: clicked,
+      title: eventTitleInput.value,
+    });
+
+    localStorage.setItem('events', JSON.stringify(events));
+    closeModal();
+  } else {
+    eventTitleInput.classList.add('error');
   }
 }
 
+function deleteEvent() {
+  events = events.filter(e => e.date !== clicked);
+  localStorage.setItem('events', JSON.stringify(events));
+  closeModal();
+}*/
 
 function initButtons() {
   document.getElementById('nextButton').addEventListener('click', () => {
@@ -208,14 +266,11 @@ function initButtons() {
     load();
   });
 
-initButtons();
-load();
-
+  document.getElementById('saveButton').addEventListener('click', saveEvent);
+  document.getElementById('cancelButton').addEventListener('click', closeModal);
+  document.getElementById('deleteButton').addEventListener('click', deleteEvent);
+  document.getElementById('closeButton').addEventListener('click', closeModal);
 }
 
-
-
-
-
-
-
+initButtons();
+load();
