@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato:wght@300&family=Poppins:ital,wght@0,200;1,200&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    text-align: center;
+    animation: fadeinout 17s;
+  }
+  
+  .mySlides.active {
+    display: block;
+  }
+
+
+  .firstSlide {
+    background-image: url('https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20180524164435/Wonders.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+  .firstSlide p {
+    padding-top: 12%;
+    perspective: 100px; 
+    text-shadow: 2px 1px #333;
+  }
+
+  p {
+    text-transform: capitalize;
+    font-size: 90px;
+    color:cornflowerblue;
+    font: bolder;
+    font-family: 'Fredoka One';
+}
+
+  .Buckle {
+      padding: 80px 0;
+  }
+
+  .doggy {
+    width: 20%;
+    height: 20%;
+}
+
+.earthContainer {
+    position: absolute;
+    top: 12%;
+    left: 33%;
+}
+
+.earth {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: #0588e4 url('earth.png');
+    background-size: cover;
+    background-position: 40% 70%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.85);
+    transition: 0.5s;
+    animation: animate 25s linear, animateTwo 25s;
+}
+
+.earth:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url('cloud.png');
+    background-size: cover;
+    z-index: 2;
+    animation: animate 18s linear infinite;
+}
+
+ /*.earth::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: lightgreen;
+    z-index: 2;
+}*/
+
+.earth img {
+    position: absolute;
+    z-index: 1;
+    transition: 0.5s;
+    pointer-events: none;
+    animation: earthy 5s linear forwards;
+}
+/*
+.earth:active img {
+    transform: scale(0.2);
+}
+
+.earth:active {
+    transform: scale(5);
+}
+*/
+@keyframes animateTwo {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 710px 0;
+    }
+}
+
+.takeOff:active .airplane {
+    max-width: 500px;
+    filter: drop-shadow(200px 200px 0 rgba(0,0,0,0));
+}
+
+   .fade {
+        text-align: center;
+        animation: fadeinout 17s;
+    }
+
+
+@keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+
+.fly {
+    background-image: url('https://images.unsplash.com/photo-1580629844914-374f3b707fe5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80');
+    background-size: cover;
+    background-position: bottom left;
+    width: 1600px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(-150px);
+}
+
+.airplaneOne {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 20%;
+    transition: 5s;
+    z-index: 8;
+    filter: drop-shadow(10px 10px 0 rgba(0,0,0, 0.5)); 
+    transition: 0.5s;
+}
+
+/*.airplaneOne {
+    width: 15%;
+    transform: scale(1.5);
+    z-index: 1;
+    transition: 0.5s;
+    pointer-events: none;
+    position: absolute;
+    top: 35%;
+}*/
+
+
+/*
+@keyframes planeOne {
+    0% {
+        transform: scale(0px);
+    }
+     50% {
+        transform: scale(0.2);
+    }
+    100% {
+        transform: scale(0);
+    }
+}*/
+
+@keyframes earthy {
+   100% { transform: scale(0.2) };
+}
+
+.airplane {
+    width: 25%;
+    z-index: 1;
+    transition: 0.5s;
+    pointer-events: none;
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    filter: drop-shadow(10px 10px 0 rgba(0,0,0, 0.5)); 
+    animation: plane 7s linear 1 forwards;
+} 
+
+
+@keyframes plane {
+    100% {
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-300px) translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-1700px) translateY(-200px) rotate(20deg);
+    }
+}
+
+
+.infinite {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 160px;
+    background: #525252;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: perspective(500px);   
+}
+
+.infinite:before {
+    content: '';
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, #fff 0%, #fff 70%, #525252 70%, #525252 100%);
+    background-size: 120px;
+    animation: animateTwo 1.5s linear infinite;
+}
+
+
+.arrowRight {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    font-size: 50px;
+    color: black;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    z-index: 1000;
+}
+
+.arrowLeft {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    font-size: 50px;
+    color: black;
+    background: transparent;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.arrowLeft:hover {
+    opacity: 0.4;
+}
+
+.arrowRight:hover {
+    opacity: 0.4;
+}
+
+
+/*.airplaneOne {
+    width: 15%;
+    transform: scale(1.5);
+    z-index: 1;
+    transition: 0.5s;
+    pointer-events: none;
+    position: absolute;
+    top: 35%;
+}*/
+
+
+@keyframes animate {
+    
+    100% {
+        transform: scale(5);
+    }
+}
+
+.mySlides h2 {
+    color: #333;
+    font-size: 50px;
+    padding-top: 10px;
+}
+
+
+.pyramids {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/1280px-Kheops-Pyramid.jpg');
+    background-size: cover;
+    z-index: 300;
+    width: 800px;
+    height: 500px;
+    border: 15px solid #fff;
+    outline: 2px dashed blue;
+}
+
+.wallChina {
+    background-image: url('https://cdn.britannica.com/82/94382-050-20CF23DB/Great-Wall-of-China-Beijing.jpg?q=60');
+    background-size: cover;
+    z-index: 300;
+    width: 800px;
+    height: 500px;
+    border: 15px solid #fff;
+    outline: 2px dashed blue;
+}
+
+.chichen {
+    background-image: url('https://cdn.britannica.com/49/61349-050-9FFBEB28/El-Castillo-pyramid-plaza-Toltec-state-Yucatan.jpg?q=60');
+    background-size: cover;
+    z-index: 300;
+    width: 800px;
+    height: 500px;
+    border: 15px solid #fff;
+    outline: 2px dashed blue;
+}
+
+.machu {
+    background-image: url('https://cdn.britannica.com/30/94530-050-99493FEA/Machu-Picchu.jpg?q=60');
+    background-size: cover;
+    z-index: 300;
+    width: 800px;
+    height: 500px;
+    border: 15px solid #fff;
+    outline: 2px dashed blue;
+}
+
+.statue {
+    background-image: url('https://cdn.britannica.com/54/150754-050-5B93A950/statue-Christ-the-Redeemer-Rio-de-Janeiro.jpg?q=60');
+    background-size: cover;
+    z-index: 300;
+    width: 800px;
+    height: 500px;
+    border: 15px solid #fff;
+    outline: 2px dashed blue;
+}
+
+.collosseum {
+    background-image: url('https://cdn.britannica.com/36/162636-050-932C5D49/Colosseum-Rome-Italy.jpg?q=60');
+    background-size: cover;
+    z-index: 300;
+    width: 800px;
+    height: 500px;
+    border: 15px solid #fff;
+    outline: 2px dashed blue;
+}
+
+.taj {
+    background-image: url('https://cdn.britannica.com/86/170586-050-AB7FEFAE/Taj-Mahal-Agra-India.jpg?q=60');
+    background-size: cover;
+    z-index: 300;
+    width: 800px;
+    height: 500px;
+    border: 15px solid #fff;
+    outline: 2px dashed blue;
+}
+
+

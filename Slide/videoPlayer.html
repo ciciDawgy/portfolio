@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="progress.css" />
+    <link rel="stylesheet" href="videoPlayer.css">
+    <title>Video Player</title>
+</head>
+<body>
+  <h1>Classic Cars</h1>
+  <video autoplay
+    src="videoplayback.mp4#t=0,60"
+    id="video"
+    class="screen"
+    poster="https://cdn.pixabay.com/photo/2018/03/23/09/15/chevrolet-3253172_1280.png"
+    muted
+  ></video>
+  <div class="controls">
+    <button class="btn" id="play">
+      <i class="fa fa-play fa-2x"></i>
+    </button>
+    <button class="btn" id="stop">
+      <i class="fa fa-stop fa-2x"></i>
+    </button>
+    <input
+      type="range"
+      id="progress"
+      class="progress"
+      min="0"
+      max="100"
+      step="0.1"
+      value="0"
+    />
+    <span class="timestamp" id="timestamp">00:00</span>
+  </div>
+    <script src="videoPlayer.js"></script>
+  </body>
+</html>
