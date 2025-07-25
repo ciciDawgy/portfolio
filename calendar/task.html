@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task.css">
+    <title>Task</title>
+</head>
+<body>
+    <div class="container"> 
+      <div class="card">
+         <h3>Task List</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque pariatur facere fugit architecto! Officiis voluptatum nemo beatae aperiam esse, voluptate quis laboriosam voluptates, ipsam minima omnis quod asperiores in. Delectus illo blanditiis ipsum earum aperiam, at exercitationem minima explicabo quasi voluptas optio, expedita accusamus laboriosam maiores eum unde nostrum velit!</p>
+        <form id="task-form">
+            <div class="input-field">
+                <input type="text" name="task" id="task">
+                <label for="task">New Task</label>
+            </div>
+            <input type="submit" value="submit" class="btn">
+        </form>
+      </div>
+    </div>
+    <div class="card-action">
+        <h5 id="task-title">Tasks</h5>
+        <div class="input-field">
+            <input type="text" name="filter" id="filter">
+            <label for="filter">Filter Tasks</label>
+        </div>
+        <ul class="collection"></ul>
+        <a href="#" class="btn">Tasks</a>
+    </div>
+
+
+    <script src="task.js"></script>
+</body>
+</html>
